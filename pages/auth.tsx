@@ -15,11 +15,12 @@ const toggleVariant = useCallback(() => {
 
 const register = useCallback( async () => {
  try {
-  await axios.post('/api/register', {
+  const data = await  axios.post('/api/register', {
     email,
     name,
     password
   })
+  console.log('data', data)
  } catch (error) {
   console.log('error', error)
  }

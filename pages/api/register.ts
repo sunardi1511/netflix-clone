@@ -12,7 +12,6 @@ export default async function handler(
     }
 
     const { email, name, password } = req.body;
-    console.log('req.body', req.body)
 
     const existingUser = await prismadb.user.findUnique({
       where: {
@@ -20,7 +19,6 @@ export default async function handler(
       },
 
     });
-    console.log('existingUser', existingUser)
 
     if (existingUser) {
       return res.status(422).json({
